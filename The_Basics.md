@@ -147,36 +147,32 @@ For a complete API reference of the insertfusioncharts() function click [here](h
 
 ### Charts from HTML Tables
 
-You can now directly take data from your HTML tables and convert it into a stunning chart. Your table must use standard html markup tags (<th>,<td>,<tr> etc), the FC 
-
-jQuery engine can even validate unevenly spaced rows/columns using the span attribute.
+You can now directly take data from your HTML tables and convert it into a stunning chart. Your table must use standard html markup tags `(<th>,<td>,<tr> etc)`, 
+the FC jQuery engine can even validate unevenly spaced rows/columns using the span attribute.
 
 The general syntax to convert a table to a chart is 
 
-
 	$(".selector").convertToFusionCharts(chartOptions[], convertOptions[]);
 
-chartOptions is an array that you pass, which defines the charts configuration, in terms of some key metics like those shown below, there are other chartOptions like 
+chartOptions is an array that you pass, which defines the charts configuration, in terms of some key metics like those 
+shown below, there are other chartOptions like lang, bgcolor, debug mode for a complete list click [here](http://docs.fusioncharts.com/charts/).
 
-lang, bgcolor, debug mode for a complete list click [here](http://docs.fusioncharts.com/charts/).
-
-*Type
-*Data format 
-*Height and Width
-*Renderer 
+*  Type
+*  Data format 
+*  Height and Width
+*  Renderer 
 
 convertOptions is the second array which tells the chart how exactly to interpret the data it gets from the table. The main parameters here are
 
-*Chart Attributes
-  *Caption
-  *X Axis / Y Axis Names
-*Major
-*Label Options
-*Legend Options
+*  Chart Attributes
+  *  Caption
+  *  X Axis / Y Axis Names
+*  Major
+*  Label Options
+*  Legend Options
 
-It’s that simple,this one function takes all the options needed to parameterize your chart and returns a chart object.  for a complete reference of chartOptions and 
-
-convertOptions and the API Reference of convertToFusioncharts click [here](http://docs.fusioncharts.com/charts/).
+It’s that simple,this one function takes all the options needed to parameterize your chart and returns a chart object.
+For a complete reference of chartOptions and convertOptions and the API Reference of convertToFusioncharts click [here](http://docs.fusioncharts.com/charts/).
 
 
 Now let us convert a simple table that looks like this into a chart, the HTML code of the table would look like this,
@@ -249,26 +245,27 @@ Now let us convert a simple table that looks like this into a chart, the HTML co
 				</tr>
 			</tbody></table>
 
-This table shows the sales of a product over the last 2 years broken down month wise, we can directly draw a chart component by calling the convertToFusionCharts() 
+This table shows the sales of a product over the last 2 years broken down month wise, we can directly draw a
+chart component by calling the convertToFusionCharts() function like this 
 
-function like this 
-
-$("#dataTable").convertToFusionCharts({
-type: "mscolumn2d",
-	width: "800",
-	height: "300",
-	dataFormat: "htmltable",
-	renderAt:"chartContainer",
-	renderer:"javascript"					
-}, {"chartAttributes":{	caption:"Units sold in the last 2 years",
+	$("#dataTable").convertToFusionCharts({
+		type: "mscolumn2d",
+		width: "800",
+		height: "300",
+		dataFormat: "htmltable",
+		renderAt:"chartContainer",
+		renderer:"javascript"					
+	}, {"chartAttributes":{	caption:"Units sold in the last 2 years",
 			xAxisName:"Month",
 			yAxisName:"Units",
 			bgColor:"FFFFFF" },
-			 });
+		 });
 
 
-The chart output will look like this, observe just by changing the major attribute to ‘column’ we completely transform the output of our chart. Try it out.
+The chart output will look like this, observe just by changing the major attribute to ‘column’ we completely transform
+the output of our chart. Try it out.
 
-Remember it is possible to draw from HTML elements that are not yet added to the DOM, these charts however become visible only after the created elements are added to 
+Remember it is possible to draw from HTML elements that are not yet added to the DOM, these charts however become 
+visible only after the created elements are added to the DOM.  
 
-the DOM.  
+Head over to the examples section to see all the different types of charts you can create.

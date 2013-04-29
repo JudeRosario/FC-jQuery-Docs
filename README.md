@@ -14,7 +14,8 @@ Creating a chart using the FusionCharts for jQuery plug-in involves just 2 simpl
 
 That’s It!! You will have stunning charts, drawn based on the attributes you specified, when you called the method. 
 ###The Basics 
-####Creating Charts
+
+####Building Charts
 
 1.  Download and Setup
 2.  Setting up the DataSource.
@@ -42,5 +43,5 @@ data sources including XML JSON and HTML tables.
   *  Resolve with Immediately Invoked Function Expressions (IIFE)
 
 An overview of methods used to modify core chart configuration, change visual aspects and duplicate chart components at runtime.
-Enabling drill-downs on charts and using selectors to modify specific charts in a dashboard.
+Next we look at enabling drill-downs on charts and using selectors to modify only specific charts in a dashboard.
 Lastly we cover FusionCharts events , how to bind to them and use them and resolving namespace conflicts within you web app. 

@@ -29,7 +29,7 @@ __Examples__
 
 Suppose we need to change the data source and type of a chart that is already rendered we can use 
 
-            $("#chartContainer").updateFusionCharts( {"dataSource": file, "dataFormat": "xml""})
+      $("#chartContainer").updateFusionCharts( {"dataSource": file, "dataFormat": "xml""})
 
 Or change the type of the chart from something to a 3D Column chart
 
@@ -37,12 +37,12 @@ Or change the type of the chart from something to a 3D Column chart
 
 #### attrFusionCharts(chartAttribute : string) 
 
-This function can be used when one wants to change the chart titles, theme colors, number formatting or scaling setup, divisional line and grid configurations and 
+This function can be used when one wants to change the chart titles, theme colors, number formatting or scaling setup,
+divisional line and grid configurations and other cosmetic features of existing charts.The syntax for using
+the attrFusionCharts method with a chart is
 
-other cosmetic features of existing charts.The syntax for using the attrFusionCharts method with a chart is
 
-
-	$(“.selector”).attrFusionCharts( chartAttribute : string)
+    $(“.selector”).attrFusionCharts( chartAttribute : string)
 
 This function is overloaded to help get and set attribute values on the fly
 
@@ -50,9 +50,8 @@ This function is overloaded to help get and set attribute values on the fly
     $(“.selector”).attrFusionCharts( chartAttributes : Object)
 
 The first function call finds all the charts rendered in the selected elements and retrieves the value of a chart parameter from those charts or 
-updates those charts with new parameter values. If a value is passed as a second parameter (newValue) to the method along with the name of the chart attribute 
-
-through chartAttribute (as first parameter), the chart gets updated with the new parameter value.
+updates those charts with new parameter values. If a value is passed as a second parameter (newValue) to the method along with the name of 
+the chart attribute through chartAttribute (as first parameter), the chart gets updated with the new parameter value.
 
 
 __Examples__
@@ -67,21 +66,21 @@ Or change the theme of the chart dynamically like this
 
 #### cloneFusionCharts(callback:function, [cloneConfigurations : Object])
 
-This method makes copy of either one or more charts and passes the list of cloned chart objects to a function for further processing. The method looks for all the 
+This method makes copy of either one or more charts and passes the list of cloned chart objects to a function for
+further processing. The method looks for all the charts from the jQuery selector and clones them. 
+An array of cloned chart objects is passed to a callback function whose name or reference needs to be passed as a 
+mandatory parameter to cloneFusionCharts method. One can also use an anonymous function as the callback function. 
+The general syntax is 
 
-charts from the jQuery selector and clones them. An array of cloned chart objects is passed to a callback function whose name or reference needs to be passed as a 
-
-mandatory parameter to cloneFusionCharts method. One can also use an anonymous function as the callback function. The general syntax is 
-
-	$("#chartContainer" ).cloneFusionCharts(callback:function, [cloneConfigurations : Object])
+    $("#chartContainer" ).cloneFusionCharts(callback:function, [cloneConfigurations : Object])
 
 __Examlples__
 
 You can clone a chart from one container into another one using code like this
 
-	$("#leftPanel").cloneFusionCharts( function() { 
-		$("#rightPanel").insertFusionCharts(this[0]); }, { renderer: "javascript" 
-		} );
+    $("#leftPanel").cloneFusionCharts( function() { 
+        $("#rightPanel").insertFusionCharts(this[0]); }, { renderer: "javascript" 
+    } );
 
 Or you can pass a smaller version of a chart to a backend application using a callback like this
 

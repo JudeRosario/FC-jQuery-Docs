@@ -4,32 +4,29 @@ The Basics
 Download and Setup 
 ------------------
 
-Download the latest version of the FusionCharts for jQuery Plug-in from [here](http://www.fusioncharts.com/jquery/), it also is included with the FusionCharts Suite XT 
-
-package. Copy and paste the required files in your web directory
-.
- Yow will need these 3 files specifically to be served with permissions set correctly. 
+Download the latest version of the FusionCharts for jQuery Plug-in from [here](http://www.fusioncharts.com/jquery/),
+it also is included with the FusionCharts Suite XT package. Copy and paste the required files in your web directory
+. Yow will need these 3 files specifically to be served with permissions set correctly. 
 
 1. FusionCharts.js.
 2. HTMLTableDataHandler.
 3. FusionCharts.jQueryPlugin.js.
 
-Once thats done, include the 3 files in any web page/app you want charts to be displayed on, you can also copy / paste the code below in the header section of your 
+Once thats done, include the 3 files in any web page/app you want charts to be displayed on, you can also copy / paste 
+the code below in the header section of your page.
 
-page.
-                <script type="text/javascript" src="path/to/FusionCharts.js"></script>
-  	<script type="text/javascript" src="path/to/FusionCharts.HTMLTableDataHandler.js"></script>
-		<script type="text/javascript" src="path/to/FusionCharts.jQueryPlugin.js"></script>
+	<script type="text/javascript" src="path/to/FusionCharts.js"></script>
+	<script type="text/javascript" src="path/to/FusionCharts.HTMLTableDataHandler.js"></script>
+	<script type="text/javascript" src="path/to/FusionCharts.jQueryPlugin.js"></script>
 
-Skip this section if you already have jQuery set-up. It is highly __recommended__ that you use it from a CDN, it is highly secure and many of your users already have 
-
-the file in cache. Copy paste the code below to always fetch the latest minified version of jQuery from their CDN . 
+Skip this section if you already have jQuery set-up. It is highly __recommended__ that you use it from a CDN, 
+it is highly secure and many of your users already have the file in cache. Copy paste the code below to always 
+fetch the latest minified version of jQuery from their CDN . 
 
             <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js></script>
 
-Alternatively you can host and serve jQuery yourself, download it from [here](http://jquery.com/download/) and copy paste into your web directory before using it 
-
-exactly as above.
+Alternatively you can host and serve jQuery yourself, download it from [here](http://jquery.com/download/) and 
+copy / paste into your web directory before using it exactly as above.
 
 Setting up the DataSource
 -------------------------
@@ -86,17 +83,16 @@ Both of them produce the same output , you can use the second option when creati
 
 ###Charts from JSON Objects/Strings
 
-If you had the same data as a JSON string inside sales.json like this, for more information about JSON itself and how to fomat it for Fusion Charts click [here]
+If you had the same data as a JSON string inside sales.json like this, for more information about JSON itself 
+and how to fomat it for Fusion Charts click [here](http://docs.fusioncharts.com/charts/contents/DataFormats/JSON/Overview.html)
 
-(http://docs.fusioncharts.com/charts/contents/DataFormats/JSON/Overview.html)
-
-{ 
-    "chart": { 
-          "caption" : "Weekly Sales Summary" ,
-          "xAxisName" : "Week",
-          "yAxisName" : "Sales",
-          "numberPrefix" : "$"
-    },
+	{ 
+   	 "chart": { 
+          	"caption" : "Weekly Sales Summary" ,
+          	"xAxisName" : "Week",
+          	"yAxisName" : "Sales",
+          	"numberPrefix" : "$"
+   	 },
         
     "data" : 
      [
@@ -105,7 +101,7 @@ If you had the same data as a JSON string inside sales.json like this, for more 
           { "label" : "Week 3", "value" : "24000" },
           { "label" : "Week 4", "value" : "15700" }
      ]
-}
+	}
 
 You can call the insertFusionCharts Function with slightly different parameters this way
 
@@ -117,7 +113,7 @@ You can call the insertFusionCharts Function with slightly different parameters 
                renderer: “javascript”
          });
 
-Similarly you can copy paste a hard-coded JSON HTML strings to this function.
+Similarly you can copy paste a hard-coded JSON HTML string to this function.
 
 	$("#chartContainer").insertFusionCharts({
                swfUrl: "FusionCharts/Column3D.swf", 
@@ -147,7 +143,7 @@ Similarly you can copy paste a hard-coded JSON HTML strings to this function.
 				}
 	});
 
-For a complete API reference of the insertfusioncharts() function click here
+For a complete API reference of the insertfusioncharts() function click [here](http://docs.fusioncharts.com/charts/).
 
 ### Charts from HTML Tables
 

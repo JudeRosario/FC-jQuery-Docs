@@ -161,6 +161,50 @@ To know if a chart is ready for print
 
 ### Namespace Conflicts
 
+It is likely that in your production projects you will use multiple JS frameworks like Prototype, jQuery, Node etc.
+It is possible that some of the other frameworks also use the $ character as a shortcut (just like jQuery), and then 
+you suddenly have two different frameworks using the same shortcut, which might result in your scripts stop working.
+
+__Using noConflict() __
+
+JQuery has a inbuilt noConflict() method to deal with such sitations, you need to create a shortcut for the $ selector to use this. 
+The noConflict() method returns a reference to the standard jQuery selector, that you can save in a  variable, for later use. This 
+approach is advisable when working on complex applications that use charts extensively.
+
+Just add this code snippet to change the reference of the $ to fc or anything else you want. 
+
+        var fc = $.noConflict();
+
+you can directly start using fc as your selector when calling your charts, for example 
+
+        fc("div  :FusionCharts").attrFusionCharts( { caption: " Sales Reports" } )
+                                AND
+        $("div :FusionCharts").attrFusionCharts( { caption: " Sales Reports" } )
+
+both the lines will produce the exact same output (i.e change a charts caption) but the 1st method does not require jQuery`s default selector.   
+
+__Using Immediately Invoked Function Expressions__
+
+It may not always be posiible to change the jQuery selector in production environments,especially if other scripts are using it, you may need to code fragments inserted for simple charts without using noConflict() . jQuery offers IIFEs (pron. Iffy) to encapsulate your code and achieve closures easily . This method is suited to complex projects but with basic charting needs. 
+
+The general syntax for using IFFEs is 
+
+         (function(){
+           /* code */ 
+         }());
+
+You can encapsulate functions like this 
+
+    $(document).ready(){ 
+        (function(){
+         $("#chartVeil").bind( "FC_Rendered", function (e, args) { 
+            this.css.hide() ; 
+             });  }());
+            }
+
+This function listens for the Rendered event and removes a load screen(#chartVeil) once the chart is ready.
+Observe how the whole block is encapsulated into one function before being called. 
+
 
 
 
